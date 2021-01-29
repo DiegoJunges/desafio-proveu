@@ -1,33 +1,33 @@
 import { Router } from "express";
 import { parseISO } from "date-fns";
 
+import RegisterRepository from "../repositories/RegisterRepository";
+import CalculateRegisterService from "../services/CalculateRegisterService";
+
 const registerHoursRouter = Router();
+const registerRepository = new RegisterRepository();
 
-interface IRegister {
-  initialHour: Date;
-  finalHour: Date;
-}
+registerHoursRouter.get("/", (request, response) => {
+  const appointments = registerRepository.all();
 
-const registeredHours: IRegister[] = [];
+  return response.json(appointments);
+});
 
 registerHoursRouter.post("/", (request, response) => {
-  const { initialHour, finalHour } = request.body;
+  try {
+    const { initialHour, finalHour } = request.body;
 
-  const register = { initialHour, finalHour };
+    parseISO(initialHour);
+    parseISO(finalHour);
 
-  parseISO(register.initialHour);
-  parseISO(register.finalHour);
+    const calculateRegister = new CalculateRegisterService(registerRepository);
 
-  if (
-    register.initialHour === register.finalHour ||
-    register.initialHour >= register.finalHour
-  ) {
-    return response.status(400).json({ message: "Invalid hours to calculate" });
+    const register = calculateRegister.execute({ initialHour, finalHour });
+
+    return response.json(register);
+  } catch (err) {
+    return response.status(400).json({ error: err.message });
   }
-
-  registeredHours.push(register);
-
-  return response.json(register);
 });
 
 export default registerHoursRouter;
