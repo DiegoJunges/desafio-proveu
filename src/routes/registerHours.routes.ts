@@ -7,18 +7,9 @@ import CalculateRegisterService from "../services/CalculateRegisterService";
 const registerHoursRouter = Router();
 const registerRepository = new RegisterRepository();
 
-registerHoursRouter.get("/", (request, response) => {
-  const appointments = registerRepository.all();
-
-  return response.json(appointments);
-});
-
 registerHoursRouter.post("/", (request, response) => {
   try {
     const { initialHour, finalHour } = request.body;
-
-    parseISO(initialHour);
-    parseISO(finalHour);
 
     const calculateRegister = new CalculateRegisterService(registerRepository);
 

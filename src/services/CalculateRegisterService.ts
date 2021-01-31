@@ -1,10 +1,6 @@
+import { differenceInMinutes } from "date-fns";
 import Register from "../models/Register";
 import RegisterRepository from "../repositories/RegisterRepository";
-
-interface IRequest {
-  initialHour: Date;
-  finalHour: Date;
-}
 
 class CalculateRegisterService {
   private registerRepository: RegisterRepository;
@@ -13,7 +9,7 @@ class CalculateRegisterService {
     this.registerRepository = registerRepository;
   }
 
-  public execute({ initialHour, finalHour }: IRequest): Register {
+  public execute({ initialHour, finalHour }: Register): string {
     const registerHour = { initialHour, finalHour };
 
     if (
@@ -23,9 +19,14 @@ class CalculateRegisterService {
       throw Error("Invalid hours to calculate");
     }
 
-    const register = this.registerRepository.create({ initialHour, finalHour });
+    const parsedHour1 = new Date(registerHour.initialHour);
+    const parsedHour2 = new Date(registerHour.finalHour);
 
-    return register;
+    const difference = differenceInMinutes(parsedHour2, parsedHour1);
+
+    const convertedRegister = this.registerRepository.timeConvert(difference);
+
+    return convertedRegister;
   }
 }
 

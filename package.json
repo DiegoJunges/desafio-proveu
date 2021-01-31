@@ -27,6 +27,7 @@
   "dependencies": {
     "date-fns": "^2.16.1",
     "express": "^4.17.1",
-    "ts-node-dev": "^1.1.1"
+    "ts-node-dev": "^1.1.1",
+    "tsyringe": "^4.4.0"
   }
 }

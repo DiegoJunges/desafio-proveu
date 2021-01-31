@@ -1,10 +1,5 @@
 import Register from "../models/Register";
 
-interface ICreateRegisterDTO {
-  initialHour: Date;
-  finalHour: Date;
-}
-
 class RegisterRepository {
   private registeredHours: Register[];
 
@@ -12,16 +7,13 @@ class RegisterRepository {
     this.registeredHours = [];
   }
 
-  public all(): Register[] {
-    return this.registeredHours;
-  }
-
-  public create({ initialHour, finalHour }: ICreateRegisterDTO): Register {
-    const register = new Register({ initialHour, finalHour });
-
-    this.registeredHours.push(register);
-
-    return register;
+  public timeConvert(n: number) {
+    const num = n;
+    const hours = num / 60;
+    const rhours = Math.floor(hours);
+    const minutes = (hours - rhours) * 60;
+    const rminutes = Math.round(minutes);
+    return `${num} minutes = ${rhours} hour(s) and ${rminutes} minute(s).`;
   }
 }
 

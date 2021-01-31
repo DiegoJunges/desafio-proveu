@@ -8,7 +8,7 @@ class Register {
 
   finalHour: Date;
 
-  constructor({ initialHour, finalHour }: Register) {
+  constructor({ initialHour, finalHour }: IRegisterConstructor) {
     this.initialHour = initialHour;
     this.finalHour = finalHour;
   }
