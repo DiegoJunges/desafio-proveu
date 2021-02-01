@@ -1,6 +1,4 @@
-<h1 align="center">
-  <img alt="Logo" src="fluxo.pdf" width="200px">
-</h1>
+
 
 <h3 align="center">
   API para o desafio da Proveu</h3>
