@@ -23,7 +23,6 @@ class CalculateRegisterService {
     const parsedHour2 = new Date(registerHour.finalHour);
 
     const difference = differenceInMinutes(parsedHour2, parsedHour1);
-
     const convertedRegister = this.registerRepository.timeConvert(difference);
 
     return convertedRegister;

@@ -13,7 +13,7 @@ class RegisterRepository {
     const rhours = Math.floor(hours);
     const minutes = (hours - rhours) * 60;
     const rminutes = Math.round(minutes);
-    return `${num} minutes = ${rhours} hour(s) and ${rminutes} minute(s).`;
+    return `${num} minutos = ${rhours} hora(s) and ${rminutes} minuto(s).`;
   }
 }
 
