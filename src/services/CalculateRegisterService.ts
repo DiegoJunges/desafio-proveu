@@ -22,8 +22,17 @@ class CalculateRegisterService {
     const parsedHour1 = new Date(registerHour.initialHour);
     const parsedHour2 = new Date(registerHour.finalHour);
 
+    function timeConvert(n: number) {
+      const num = n;
+      const hours = num / 60;
+      const rhours = Math.floor(hours);
+      const minutes = (hours - rhours) * 60;
+      const rminutes = Math.round(minutes);
+      return `${num} minutos = ${rhours} hora(s) and ${rminutes} minuto(s).`;
+    }
+
     const difference = differenceInMinutes(parsedHour2, parsedHour1);
-    const convertedRegister = this.registerRepository.timeConvert(difference);
+    const convertedRegister = timeConvert(difference);
 
     return convertedRegister;
   }
