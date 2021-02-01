@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="Logo" src="fluxo.svg" width="200px">
+  <img alt="Logo" src="fluxo.pdf" width="200px">
 </h1>
 
 <h3 align="center">
