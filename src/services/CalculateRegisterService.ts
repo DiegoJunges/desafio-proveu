@@ -12,6 +12,8 @@ class CalculateRegisterService {
   public execute({ initialHour, finalHour }: Register): string {
     const registerHour = { initialHour, finalHour };
 
+    // validating data
+
     if (
       registerHour.initialHour === registerHour.finalHour ||
       registerHour.initialHour >= registerHour.finalHour
@@ -22,6 +24,8 @@ class CalculateRegisterService {
     const parsedHour1 = new Date(registerHour.initialHour);
     const parsedHour2 = new Date(registerHour.finalHour);
 
+    // converting data to humanized format
+
     function timeConvert(n: number) {
       const num = n;
       const hours = num / 60;
@@ -30,6 +34,8 @@ class CalculateRegisterService {
       const rminutes = Math.round(minutes);
       return `${num} minutos = ${rhours} hora(s) and ${rminutes} minuto(s).`;
     }
+
+    // getting the difference time
 
     const difference = differenceInMinutes(parsedHour2, parsedHour1);
     const convertedRegister = timeConvert(difference);
