@@ -9,20 +9,20 @@
 <p align="center">Calculadora de jornada de trabalho!</p>
 
 <p align="center">
-  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/DiegoJunges/hackoverflow-api?color=%23FF9000">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/DiegoJunges/desafio-proveu-backend?color=%23FF9000">
 
   <a href="https://www.linkedin.com/in/diego-junges/" target="_blank" rel="noopener noreferrer">
     <img alt="Made by" src="https://img.shields.io/badge/made%20by-Diego%20Junges-%23FF9000">
   </a>
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/DiegoJunges/hackoverflow-api?color=%23FF9000">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/DiegoJunges/desafio-proveu-backend?color=%23FF9000">
 
   <a href="https://github.com/DiegoJunges/gobarber-api/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/DiegoJunges/hackoverflow-api?color=%23FF9000">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/DiegoJunges/desafio-proveu-backend?color=%23FF9000">
   </a>
 
   <a href="https://github.com/DiegoJunges/gobarber-api/issues">
-    <img alt="Repository issues" src="https://img.shields.io/github/issues/DiegoJunges/hackoverflow-api?color=%23FF9000">
+    <img alt="Repository issues" src="https://img.shields.io/github/issues/DiegoJunges/desafio-proveu-backend?color=%23FF9000">
   </a>
 
   <img alt="GitHub" src="https://img.shields.io/github/license/DiegoJunges/hackoverflow-api?color=%23FF9000">
@@ -42,9 +42,9 @@
 
 ##📑🏻‍♂️ About the project
 
-Esta aplicação foi construída unicamente para o desafio da empresa Proveo
+Esta aplicação foi construída unicamente para o desafio da empresa Proveu
 
-Para ver o **web client**, clique aqui: [Desafio Proveo Web](https://github.com/DiegoJunges/desafio-proveu-frontend)<br />
+Para ver o **web client**, clique aqui: [Desafio Proveu Web](https://github.com/DiegoJunges/desafio-proveu-frontend)<br />
 
 ## 🚀 Tecnologias
 
@@ -109,14 +109,14 @@ exemplo:
 # Fork usando GitHub linha de commando oficial.
 # Se você não tem o GitHub CLI, use o website para fazer isso.
 
-$ gh repo fork DiegoJunges/desafio-proveo-backend
+$ gh repo fork DiegoJunges/desafio-proveu-backend
 ```
 
 **Siga os passos abaixo**
 
 ```bash
 # Clone o seu fork
-$ git clone your-fork-url && cd hackoverflow-api
+$ git clone your-fork-url && cd desafio-proveu-backend
 
 # Crie uma branch com sua 'feature'
 $ git checkout -b my-feature
