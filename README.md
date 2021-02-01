@@ -1,3 +1,6 @@
+<h1 align="center">
+  <img alt="Logo" src="logo.png" width="600px">
+</h1>
 
 
 <h3 align="center">
